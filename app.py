@@ -6,8 +6,8 @@ st.title("Aplicación de Registros de Pozos")
 st.sidebar.title('Menú')
 opciones_inicio=st.sidebar.radio("Selecione una opción",["Inicio","Datos","Cálculos"])
 
-archivo_las=lasio.read("Archivo_Las\LGAE-040.las")
-#archivo_las=lasio.read("LGAE-040.las")
+#archivo_las=lasio.read("Archivo_Las\LGAE-040.las")
+archivo_las=lasio.read("LGAE-040.las")
 df=archivo_las.df()
 
 
