@@ -6,8 +6,8 @@ st.title("Aplicación de Registros de Pozos")
 st.sidebar.title('Menú')
 opciones_inicio=st.sidebar.radio("Selecione una opción",["Inicio","Datos","Cálculos"])
 
-#archivo_las=lasio.read("Archivo_Las\LGAE-040.las")
-archivo_las=lasio.read("LGAE-040.las")
+archivo_las=lasio.read("Archivo_Las\LGAE-040.las")
+#archivo_las=lasio.read("LGAE-040.las")
 df=archivo_las.df()
 
 
@@ -30,3 +30,18 @@ archivo_subido=st.sidebar.file_uploader("Cargar Archivo Excel", type=[".xls",".x
 if archivo_subido is not None:
 	df2=pd.read_excel(archivo_subido)
 	st.write(df2)
+
+
+with st.expander("Sección 1"):
+
+	st.info("Ingreso a la sección 1")
+
+with st.expander("Sección 2"):
+	st.warning("Ingreso a la sección 2")	
+	columna1,columna2=st.columns(2)
+	with columna1:
+		a=st.selectbox("Select 1",[1,2,3])
+	with columna2:
+		b=st.selectbox("Select 2",[1,2,3])
+		if b==1:
+			st.write(df)
